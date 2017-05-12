@@ -279,6 +279,9 @@ p {
     padding-top: 100px;
     color: white;
 }
+#footer-bottom p{
+    margin-bottom: 0px;
+}
 .label-info{
     background-color: rgba(0, 0, 0, .5);
 }
