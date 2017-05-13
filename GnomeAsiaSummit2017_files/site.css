@@ -249,30 +249,36 @@ p {
     }
 }
 
-/*sponsor*/
+/*media*/
 
-#div_sponsor {
+#div_media {
     padding-top: 60px;
     padding-bottom: 50px;
 }
 
-#div_sponsor_logo {
+#div_media_logo {
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-#div_sponsor_logo > div:hover {
+#div_media_logo > div:hover {
     background-color: #f7f7f7;
 }
 
-#h2_sponsor {
+#h2_media {
     font-size: 20px;
 }
 
-#p_sponsor {
+#p_media {
     padding-top: 20px;
     font-size: 20px;
 }
+
+#div_media {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
 
 /*footer*/
 #footer-bottom {
