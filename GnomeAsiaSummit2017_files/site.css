@@ -35,7 +35,7 @@ p {
 }
 
 .main-navbar .navbar-toggle .icon-bar {
-    background-color: #fff
+    background-color: #b13231;
 }
 
 #navbar > ul > li > a {
@@ -183,6 +183,17 @@ p {
     padding-bottom: 50px;
 }
 
+.back{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.5);
+}
+
 #h1_venue {
     font-size: 50px;
 }
@@ -247,6 +258,37 @@ p {
     #p_venue {
         font-size: 10px;
     }
+}
+
+
+/*sponsor*/
+
+#div_sponsor {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+#div_sponsor_logo {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#div_sponsor_logo > div:hover {
+    background-color: #f7f7f7;
+}
+
+#h2_sponsor {
+    font-size: 20px;
+}
+
+#p_sponsor {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#div_sponsor {
+    padding-top: 60px;
+    padding-bottom: 50px;
 }
 
 /*media*/
