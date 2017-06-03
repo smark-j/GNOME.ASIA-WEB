@@ -491,9 +491,8 @@ p {
     font-size: 20px;
 }
 
-#div_media {
-    padding-top: 60px;
-    padding-bottom: 50px;
+#div_media a{
+    padding:0 20px;
 }
 
 /*communities*/
@@ -521,9 +520,8 @@ p {
     font-size: 20px;
 }
 
-#div_communities {
-    padding-top: 60px;
-    padding-bottom: 50px;
+#div_communities a{
+    padding: 0 20px;
 }
 
 /*footer*/
