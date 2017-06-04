@@ -5346,7 +5346,7 @@ button.close {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	min-height: 500px;
+	height: 600px;
 
 }
 .carousel-inner>.item {
@@ -5369,8 +5369,8 @@ button.close {
 		transition: transform .6s ease-in-out;
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
-		-webkit-perspective: 1000px;
-		perspective: 1000px;
+		-webkit-perspective: 900px;
+		perspective: 900px;
 
 	}
 	.carousel-inner>.item.active.right, .carousel-inner>.item.next {

@@ -226,19 +226,54 @@ p {
 /*height: 400px;*/
 /*}*/
 
+.about_gnome_asia_logo{
+    float: left;
+    width: 30%;
+    padding-top: 15px;
+}
+
+.about_gnome_asia{
+    position: relative;
+    float: right;
+    text-align: left;
+    padding-left: 40px;
+    width:70%;
+}
+
 #div_about {
     padding-top: 10px;
     padding-bottom: 50px;
 }
 
+#div_about ul{
+    /*height: 300px;*/
+    list-style-type: none;
+}
+
+#div_about li{
+    width: 25%;
+    text-align: center;
+}
+
+#div_about li img{
+    border-radius: 50%;
+}
+
+#div_about h4{
+    text-align: center;
+}
+
 #div_about div > div:hover {
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
 }
 
 /*venue*/
 #div_venue {
-    padding-top: 72px;
-    padding-bottom: 50px;
+    /*padding-top: 72px;
+    padding-bottom: 50px;*/
+    height: 600px;
+    background: url("cqu1.jpg") center no-repeat;
+    background-attachment:scroll;
 }
 
 .back{
@@ -464,6 +499,35 @@ p {
     #p_papers {
         font-size: 10px;
     }
+}
+
+/*organizer*/
+
+#div_organizer {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+#div_organizer_logo {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#div_organizer_logo > div:hover {
+    background-color: #f7f7f7;
+}
+
+#h2_organizer {
+    font-size: 20px;
+}
+
+#p_organizer {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#div_organizer a{
+    padding:0 20px;
 }
 
 /*media*/
