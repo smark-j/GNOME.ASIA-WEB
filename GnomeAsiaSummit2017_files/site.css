@@ -251,6 +251,7 @@ p {
 }
 
 #div_about li{
+    float: left;
     width: 25%;
     text-align: center;
 }
