@@ -589,6 +589,35 @@ p {
     padding: 0 20px;
 }
 
+/*contributors*/
+
+#div_contributors {
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+#div_contributors_logo {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#div_contributors_logo > div:hover {
+    background-color: #f7f7f7;
+}
+
+#h2_contributors {
+    font-size: 20px;
+}
+
+#p_contributors {
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+#div_contributors a{
+    padding: 0 20px;
+}
+
 /*footer*/
 #footer-bottom {
     padding-top: 100px;
