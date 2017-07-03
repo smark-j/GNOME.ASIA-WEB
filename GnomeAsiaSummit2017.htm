@@ -40,7 +40,6 @@
     border: 2px rgba(255,255,255,.38) solid !important;
     border-radius: 4px !important;
 }
-
 .en-markup-crop-options div div:first-of-type {
     margin-left: 0px !important;
 }
@@ -66,7 +65,8 @@
     margin: 0;
 }
 #footer-bottom span{
-    margin-left: 20px;
+    margin:10px 0 0 20px;
+    white-space: nowrap;
 }
 #footer-bottom i{
     height: 20px;
@@ -82,11 +82,21 @@
     background-image: url('./GnomeAsiaSummit2017_files/twitter.png');
 } 
 #footer-bottom .icon-google{
-    background-image: url('./GnomeAsiaSummit2017_files/Google+.png');
+    background-image: url('./GnomeAsiaSummit2017_files/google+.png');
 } 
 #footer-bottom .icon-weibo{
     background-image: url('./GnomeAsiaSummit2017_files/weibo.png');
 }
+.website-info {
+    background-color: #333;
+    min-height: 100px;
+    color: #767676;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 </style>
 
 </head>
@@ -390,12 +400,15 @@
 <footer id="footer-bottom" class="text-center">
     <!-- <img class="img-responsive center-block" src="./GnomeAsiaSummit2017_files/gas_logo.png" alt="GnomeAsiaSummit2017" height="256px"> -->
     <hr>
-    <p class="label-info">© 2017 GNOME（TM）.ASIA
-        <span class="label-info">Follow us</span>
+    <p class="website-info">
+    <span>© 2017 GNOME（TM）.ASIA</span>
+    <span>
+        Follow us
         <a href="https://twitter.com/linuxstory/"><i class="icon-facebook"></i></a>
         <a href="https://www.facebook.com/linuxstory/"><i class="icon-twitter"></i></a>
         <a href="https://plus.google.com/u/2/b/117320401685694979156/117320401685694979156"><i class="icon-google"></i></a>
         <a href="https://weibo.com/linuxstory/"><i class="icon-weibo"></i></a>
+    </span>
     </p>
 </footer>
 
@@ -412,6 +425,6 @@
 <!--myjs-->
 <script src="./GnomeAsiaSummit2017_files/site.js"></script>
 
-<script src="https://s13.cnzz.com/z_stat.php?id=1262018095&web_id=1262018095" language="JavaScript"></script>
+<div style="display: none;"><script src="https://s13.cnzz.com/z_stat.php?id=1262018095&web_id=1262018095" language="JavaScript"></script></div>
 </body>
 </html>
