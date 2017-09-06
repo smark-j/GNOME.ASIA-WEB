@@ -205,13 +205,37 @@
 
 
 <script type="text/javascript">
-
+var browser = {
+    versions:function(){
+    var u = navigator.userAgent, app = navigator.appVersion;
+    return {
+        trident: u.indexOf("Trident") > -1,
+        presto: u.indexOf("Presto") > -1,
+        webKit: u.indexOf("AppleWebKit") > -1,
+        gecko: u.indexOf("Gecko") > -1 && u.indexOf("KHTML") == -1,
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/),
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+        android: u.indexOf("Android") > -1 || u.indexOf("Linux") > -1,
+        iPhone: u.indexOf("iPhone") > -1 ,
+        iPad: u.indexOf("iPad") > -1,
+        webApp: u.indexOf("Safari") == -1
+        };
+    }(),
+    language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
 
 var onSuccess = function(location){
   if(location.country.iso_code=="CN"){
-		$("#cqu_map").attr("src","https://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
-		$("#hotel_map1").attr("src","https://gaode.com/search?id=B001702171&city=500106&geoobj=106.577472%7C29.556369%7C106.579741%7C29.557361&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
-        $("#hotel_map2").attr("src","https://gaode.com/search?query=Chongqing+Harbour+Plaza&city=500000&geoobj=106.576418%7C29.555936%7C106.580956%7C29.557919&zoom=18");
+        if(browser.versions.mobile){
+            $("#cqu_map").attr("src","https://m.amap.com/search/mapview/poiid=B0017822WN");
+            $("#hotel_map1").attr("src","http://m.amap.com/search/mapview/poiid=B001702171");
+            $("#hotel_map2").attr("src","http://m.amap.com/search/mapview/poiid=B001702D9E");
+            
+        }else{
+    		$("#cqu_map").attr("src","https://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
+    		$("#hotel_map1").attr("src","https://gaode.com/search?id=B001702171&city=500106&geoobj=106.577472%7C29.556369%7C106.579741%7C29.557361&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
+            $("#hotel_map2").attr("src","https://gaode.com/search?query=Chongqing+Harbour+Plaza&city=500000&geoobj=106.576418%7C29.555936%7C106.580956%7C29.557919&zoom=18");
+        }
 	}else{
 		$("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
