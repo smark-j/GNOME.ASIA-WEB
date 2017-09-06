@@ -80,6 +80,13 @@
     color:#007aaa;
     font-weight: bold;
 }
+
+.map{
+  float:left;
+  width:100%;
+  height:500px; 
+}
+
 </style></head>
 
 <body>
@@ -88,7 +95,7 @@
 <!-- NAVBAR
 ================================================== -->
 <nav  class="navbar navbar-fixed-top main-navbar" role="navigation">
-    <div class="container">
+    <div class="container" style="display: flex;justify-content: flex-end;">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -96,9 +103,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#" style="display: flex;">
                 <span><img id="narbar_logo_samll" class="visible-md-block" height="35px" src="./GnomeAsiaSummit2017_files/gas_logo.png" alt="Top"></span>
-                <span><img id="narbar_logo_big" class="visible-lg-block" height="50px" src="./GnomeAsiaSummit2017_files/gas_logo.png" alt="Top"></span>
+                <span><img id="narbar_logo_big" class="visible-lg-block" height="42px" src="./GnomeAsiaSummit2017_files/gas_logo.png" alt="Top"></span>
                 <!--<span>Bootstrap theme</span>-->
             </a>
         </div>
@@ -133,96 +140,18 @@
 </div>
 
 <div class="container">
-<div class="papers">
-    <h1>PRESENTING AT THE GNOME.ASIA SUMMIT</h1>
-    <a href="http://cn.mikecrm.com/nhrytIP"><button class="btn btn btn-danger navbar-btn" type="button">Click here to submit your presentation</button></a>
-    <p>
-        GNOME.Asia Summit 2017 invites proposals for presentations at the conference. GNOME.Asia Summit is the featured annual GNOME Conference in Asia. The event focuses primarily on the GNOME desktop, but also covers applications and the development platform tools. It brings together the GNOME community in Asia to provide a forum for users, developers, foundation leaders, governments and businesses to discuss the present technology and future developments.
-    </p>
-    <p>
-       The conference will be held in Chongqing University, Chongqing, China from 2017-10-14  until 2017-10-16. We welcome proposals by newcomers and experienced speakers alike.
-    </p>
-    <p>
-        Coinciding with the 10 years anniversary of GNOME.Asia, 20 years since GNOME was born and the 20 years anniversary of Chongqing’s promotion as a province-level municipality, GNOME.Asia Summit 2017 arrives at the mountain city of Chongqing this year, which have an extraordinary significance.
-    </p>
-    <p>
-        Possible topics include, but are not limited to:
-    </p>
-    <p class="blue">Contributing to GNOME</p>
-    <p>
-        <li>Latest Developments in GNOME</li>
-        <li>Writing Applications for GNOME 3</li>
-        <li>GNOME UI Design</li>
-        <li>QA and testing in GNOME</li>
-        <li>GNOME Accessibility</li>
-        <li>GNOME Human Interface Engineering (Icons and Graphic Design)</li>
-        <li>GNOME Marketing/Engagement</li>
-        <li>Asia success stories / Local GNOME Projects</li>
-        <li>GNOME and Education</li>
-        <li>FOSS Outreach Program</li>
-        <li>Developing GNOME on mobile devices (smart phones, tablets)</li>
-        <li>Developing GNOME on embedded systems or open source hardware</li>
-        <li>Google Summer of Code</li>
-    </p>
-    <p class="blue">
-        Contributing to Linux and Open Source
-    </p>
-    <p>
-        <li>Linux Kernel and Development</li>
-        <li>The development and promotion of open-source operating systems</li>
-        <li>About Debian, Fedora, openSUSE, Ubuntu, FreeBSD, and other distributions</li>
-        <li>The development and promotion of other open-source projects</li>
-   </p>
-    <p class="blue">
-        Open Source Enlightenment and Related Story
-    </p>
-    <p>
-        <li>The Knowledge and Spirit of Open Source</li>
-        <li>Open Source stories of your own</li>
-        <li>How to optimize the process and  improve efficiency with the help of open-source tools</li>
-        <li>How to engage non-technical contributors in Open Source Projects</li>
-        <li>How to engage more female contributors in Open Source Projects</li>
-    </p>
-    <p class="blue">
-        Emerging Technologies
-    </p>
-    <p>
-        <li>Artificial Intelligence</li>
-        <li>Deep Learning</li>
-        <li>AR & VR</li>
-        <li>Big Data</li>
-        <li>Distributed Systems</li>
-        <li>Open Source DevOps</li>
-        <li>DevOps with AI</li>
-        <li>Other Emerging Technologies</li>
-    </p>
-    <p>
-        Other topics could include any topic related to Free and Open Source Software not listed above.
-    </p>
-    <p>
-        We are about to launch program to fund part of the speakers to cover their travel expense. Please fill in the related blank in the application form and follow the latest news at:<a href="https://linuxstory.org/tag/gnome"><i>https://linuxstory.org/tag/gnome</i></a> . GNOME foundation members are encouraged to apply to GNOME Travel Committee for travel allowance.
-    </p>
-    <p>
-        A standard session will be scheduled for 45 mins (35 mins talk + 10 mins Q&A). The session could be a technical talk, panel discussion, or BOF. If you need more time or additional resources, feel free to get in touch with the organizing team.
-    </p>
-    <p>
-    <img width="100%" src="GnomeAsiaSummit2017_files/gnome-asia-logo-2017.png">
-    </p>
-    <p>
-        For participants who would like to participate, but are not sure they’d like to do a full talk proposal, we have shorter lightning talks. These are a 10 minutes presentation to demonstrate your work or promote an interesting topic. These talks will be grouped together in a single session.
-    </p>
-    <p>
-        Please provide a short abstract of your proposal (under 150 words). Include your name, biographical information, a photo suitable for the web, a title, and a description of your presentation. The reviewing team will evaluate the entries based on the submitted abstracts and available time by following the schedule.
-    </p>
-    <p>
-        <i class="blue">*Submission deadline: 2017-08-15</i><br>
-        <i class="blue">*Confirmation of paper acceptance: 2017-08-20 until 2017-08-25</i>
-    </p>
-    <p>
-        All interested contributors are highly encouraged to send in their talks. Please help us to spread the invitation to other potential participants. Even you do not plan to be a speaker, please consider joining GNOME.Asia 2017. This is going to be a great event!
-    </p>
-    <a href="http://cn.mikecrm.com/nhrytIP"><button class="btn btn btn-danger navbar-btn" type="button">Click here to submit your presentation</button></a>
-</div>
+	<div class="papers"> 
+	  <h1 style="text-align: center;">Travel</h1>
+      <h3><stong>Venue</stong></h3>
+      <div>
+        <iframe id="cqu_map" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <p><img width="100%" src="GnomeAsiaSummit2017_files/cqumap.png"/></p>
+      <h3><stong>Recommend Hotel</stong></h3>
+      <div>
+        <iframe id="hotel_map" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+	</div>
 </div>
 
 <footer id="footer-bottom" class="text-center">
@@ -252,6 +181,46 @@
 <script src="./GnomeAsiaSummit2017_files/ie10-viewport-bug-workaround.js"></script>
 <!--myjs-->
 <script src="./GnomeAsiaSummit2017_files/site.js"></script>
+
+<!--map-->
+<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+<script src="http://webapi.amap.com/maps?v=1.3&key=fe593597f2b573bb0c8c6623d2756dd3"></script>
+
+<script type="text/javascript">
+var mycountry = remote_ip_info['country'];
+// var myprovince = remote_ip_info['province']; 
+// var mycity = remote_ip_info['city'] 
+// var mydistrict = remote_ip_info['district'];
+if(mycountry=="\u4e2d\u56fd" || mycountry=="中国"){
+//       var map1 = new AMap.Map('cqu_map', {
+//           center: [106.4709573984,29.5655346392],//google 29.5655651333,106.4709853245
+//           zoom: 16
+//       });
+//       map1.plugin(["AMap.ToolBar"], function() {
+//           map1.addControl(new AMap.ToolBar());
+//       });
+//       var marker1 = new AMap.Marker({
+//         // icon : 'http://vdata.amap.com/icons/b18/1/2.png',//24px*24px
+//         position : [106.4709573984,29.5655346392],
+//         offset : new AMap.Pixel(-48,-48),
+//         map : map1
+// });
+
+//       var map2 = new AMap.Map('hotel_map', {
+//           center: [106.4601100000,29.5559100000],//google 29.5559435279,106.4601372738
+//           zoom: 6
+//       });
+//       map2.plugin(["AMap.ToolBar"], function() {
+//           map2.addControl(new AMap.ToolBar());
+//       });
+  $("#cqu_map").attr("src","http://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
+  $("#hotel_map").attr("src","http://gaode.com/search?id=B001702171&city=500106&geoobj=106.467577%7C29.564633%7C106.473343%7C29.567441&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
+}else{
+  $("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
+
+  $("#hotel_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
+}
+</script>
 
 <script src="https://s13.cnzz.com/z_stat.php?id=1262018095&web_id=1262018095" language="JavaScript"></script>
 </body></html>
