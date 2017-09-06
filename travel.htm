@@ -183,50 +183,68 @@
 <script src="./GnomeAsiaSummit2017_files/ie10-viewport-bug-workaround.js"></script>
 <!--myjs-->
 <script src="./GnomeAsiaSummit2017_files/site.js"></script>
-
+<script type="text/javascript" src="//js.maxmind.com/js/apis/geoip2/v2.1/geoip2.js"></script>
 <!--map-->
 
 
 <script type="text/javascript">
+var onSuccess = function(location){
+  if(location.country.iso_code=="CN"){
+		$("#cqu_map").attr("src","http://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
+		$("#hotel_map").attr("src","http://gaode.com/search?id=B001702171&city=500106&geoobj=106.467577%7C29.564633%7C106.473343%7C29.567441&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
+	}else{
+		$("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
-//$(function(){ 
+    	$("#hotel_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
+	}
+};
+var onError = function(location){
+	$("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
-  //var myip = remote_ip_info['ip'];
-  //http://ip.taobao.com/service/getIpInfo.php?ip=8.8.8.8
-  // var myprovince = remote_ip_info['province']; 
-  // var mycity = remote_ip_info['city'] 
-  // var mydistrict = remote_ip_info['district'];
-  //if(mycountry=="\u4e2d\u56fd" || mycountry=="中国"){
-  //       var map1 = new AMap.Map('cqu_map', {
-  //           center: [106.4709573984,29.5655346392],//google 29.5655651333,106.4709853245
-  //           zoom: 16
-  //       });
-  //       map1.plugin(["AMap.ToolBar"], function() {
-  //           map1.addControl(new AMap.ToolBar());
-  //       });
-  //       var marker1 = new AMap.Marker({
-  //         // icon : 'http://vdata.amap.com/icons/b18/1/2.png',//24px*24px
-  //         position : [106.4709573984,29.5655346392],
-  //         offset : new AMap.Pixel(-48,-48),
-  //         map : map1
-  // });
+	$("#hotel_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
+}
+geoip2.city(onSuccess, onError);
 
-  //       var map2 = new AMap.Map('hotel_map', {
-  //           center: [106.4601100000,29.5559100000],//google 29.5559435279,106.4601372738
-  //           zoom: 6
-  //       });
-  //       map2.plugin(["AMap.ToolBar"], function() {
-  //           map2.addControl(new AMap.ToolBar());
-  //       });
-  //  $("#cqu_map").attr("src","http://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
-  //  $("#hotel_map").attr("src","http://gaode.com/search?id=B001702171&city=500106&geoobj=106.467577%7C29.564633%7C106.473343%7C29.567441&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
-  //}else{
-    $("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
-    $("#hotel_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
- // }
 
-//}); 
+// $(function(){ 
+	
+//   var myip = remote_ip_info['ip'];
+//   http://ip.taobao.com/service/getIpInfo.php?ip=8.8.8.8
+//   var myprovince = remote_ip_info['province']; 
+//   var mycity = remote_ip_info['city'] 
+//   var mydistrict = remote_ip_info['district'];
+//   if(mycountry=="\u4e2d\u56fd" || mycountry=="中国"){
+//         var map1 = new AMap.Map('cqu_map', {
+//             center: [106.4709573984,29.5655346392],//google 29.5655651333,106.4709853245
+//             zoom: 16
+//         });
+//         map1.plugin(["AMap.ToolBar"], function() {
+//             map1.addControl(new AMap.ToolBar());
+//         });
+//         var marker1 = new AMap.Marker({
+//           // icon : 'http://vdata.amap.com/icons/b18/1/2.png',//24px*24px
+//           position : [106.4709573984,29.5655346392],
+//           offset : new AMap.Pixel(-48,-48),
+//           map : map1
+//   });
+
+//         var map2 = new AMap.Map('hotel_map', {
+//             center: [106.4601100000,29.5559100000],//google 29.5559435279,106.4601372738
+//             zoom: 6
+//         });
+//         map2.plugin(["AMap.ToolBar"], function() {
+//             map2.addControl(new AMap.ToolBar());
+//         });
+//    $("#cqu_map").attr("src","http://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
+//    $("#hotel_map").attr("src","http://gaode.com/search?id=B001702171&city=500106&geoobj=106.467577%7C29.564633%7C106.473343%7C29.567441&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
+//   }else{
+//     $("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
+
+//     $("#hotel_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
+//  }
+
+// }); 
 </script>
 
 <script src="https://s13.cnzz.com/z_stat.php?id=1262018095&web_id=1262018095" language="JavaScript"></script>
