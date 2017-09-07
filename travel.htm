@@ -161,7 +161,7 @@
         <p>We recommend two hotels for you, one hotel is Chongqing Liyuan Hotel (<a href="https://www.booking.com/hotel/cn/chongqing-liyuan.html">https://www.booking.com/hotel/cn/chongqing-liyuan.html</a>) is near from the summit hall.</p>
         <iframe id="hotel_map1" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
         <br>
-        <p>Another hotel is Chongqing Harbour Plaza(Hotel), which is in the downtown of Chongqing city, you can get enjoy the feelings of this city around the Jiefangbei.</p>
+        <p>Another hotel is InterContinental Chongqing Hotel(<a href="https://www.booking.com/hotel/cn/intercontinental-chongqing.html">https://www.booking.com/hotel/cn/intercontinental-chongqing.html</a>), which is in the downtown of Chongqing city, you can get enjoy the feelings of this city around the Jiefangbei.</p>
         <iframe id="hotel_map2" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
         <br>
       </div>
@@ -225,29 +225,29 @@ var browser = {
 }
 
 var onSuccess = function(location){
-  if(location.country.iso_code=="CN"){
+  if(location.country.iso_code =="CN"){
         if(browser.versions.mobile){
             $("#cqu_map").attr("src","https://m.amap.com/search/mapview/poiid=B0017822WN");
             $("#hotel_map1").attr("src","https://m.amap.com/search/mapview/poiid=B001702171");
-            $("#hotel_map2").attr("src","https://m.amap.com/search/mapview/poiid=B001702D9E");
+            $("#hotel_map2").attr("src","https://m.amap.com/search/mapview/poiid=B0017091J1");
             
         }else{
     		$("#cqu_map").attr("src","https://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
     		$("#hotel_map1").attr("src","https://gaode.com/search?id=B001702171&city=500106&geoobj=106.577472%7C29.556369%7C106.579741%7C29.557361&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
-            $("#hotel_map2").attr("src","https://gaode.com/search?query=Chongqing+Harbour+Plaza&city=500000&geoobj=106.576418%7C29.555936%7C106.580956%7C29.557919&zoom=18");
+            $("#hotel_map2").attr("src","https://gaode.com/search?query=%E9%87%8D%E5%BA%86%E6%B4%B2%E9%99%85%E9%85%92%E5%BA%97&city=500000&geoobj=106.576219%7C29.555884%7C106.580758%7C29.557868&zoom=18");
         }
 	}else{
 		$("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
     	$("#hotel_map1").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
-        $("#hotel_map2").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.609482492421!2d106.57659091510368!3d29.55686498206229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36933484094cfb45%3A0x69436ac4413144e6!2z6YeN5bqG5rW36YC46YWS5bqX!5e0!3m2!1szh-CN!2sus!4v1504703697613?hl=en-US");
+        $("#hotel_map2").attr("src","https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3470.529113069521!2d106.5768113!3d29.5592046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x369334809109b311%3A0xb04f8d40d2b799f8!2z6YeN5bqG5rSy6ZmF6YWS5bqX!5e0!3m2!1szh-CN!2sjp!4v1504791707271?hl=en-US");
 	}
 };
 var onError = function(location){
 	$("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
 	$("#hotel_map1").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
-    $("#hotel_map2").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.609482492421!2d106.57659091510368!3d29.55686498206229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36933484094cfb45%3A0x69436ac4413144e6!2z6YeN5bqG5rW36YC46YWS5bqX!5e0!3m2!1szh-CN!2sus!4v1504703697613?hl=en-US");
+    $("#hotel_map2").attr("src","https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3470.529113069521!2d106.5768113!3d29.5592046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x369334809109b311%3A0xb04f8d40d2b799f8!2z6YeN5bqG5rSy6ZmF6YWS5bqX!5e0!3m2!1szh-CN!2sjp!4v1504791707271?hl=en-US");
 }
 geoip2.country(onSuccess, onError);
 
