@@ -154,20 +154,40 @@
 <a href="https://en.wikipedia.org/wiki/Chongqing_Jiangbei_International_Airport">https://en.wikipedia.org/wiki/Chongqing_Jiangbei_International_Airport</a></p>
         <p>And you can visit this site to check flights to Chongqing
 <a href="http://english.ctrip.com">http://english.ctrip.com</a></p>
-        <p>We try to provide one-time airport pick-up service for speakers at Chongqing Airport at 2PM, Oct 13, 2017, if you need us to pick up you from airport, please feel free to contact <a href="mailto:gnome@chongqinglug.org?subject=GnomeAsiaSummit2017" style="color:#2565d4;">gnome@chongqinglug.org</a>with mail title “CQ Airport pick-up on GNOME.Asia”</p>
+        <p>We try to provide one-time airport pick-up service for speakers at Chongqing Airport at 2PM, Oct 13, 2017, if you need us to pick up you from airport, please feel free to contact <a href="mailto:gnome@chongqinglug.org?subject=GnomeAsiaSummit2017" style="color:#2565d4;">gnome@chongqinglug.org</a>with mail title "CQ Airport pick-up on GNOME.Asia"</p>
       </div>
-      <h3><stong>Book Hotel & Getting to Hotel</stong></h3>
+      <h3><stong>Hotel & Hostel</stong></h3>
       <div>
-        <p>We recommend two hotels for you, one hotel is Chongqing Liyuan Hotel (<a href="https://www.booking.com/hotel/cn/chongqing-liyuan.html">https://www.booking.com/hotel/cn/chongqing-liyuan.html</a>) is near from the summit hall.</p>
+        <p>We recommend two categories hotels for you, one category hotels are near Chongqing University summit hall for your convenience, one category hotels are located in the downtown of Chongqing for you to enjoy the city features.</p>
+      </div>
+      <h3><stong>Near Chongqing University</stong></h3>  
+      <div>
+        <p>Hotel: 重庆丽苑大酒店/Chongqing Liyuan Hotel</p> 
+        <p>Price:Average 400-700RMB(US$65-110)/night</p>
+        <p>Rating 7.9 on Booking.com</p>
+        <p>Link: <a href="https://www.booking.com/hotel/cn/intercontinental-chongqing.html">https://www.booking.com/hotel/cn/intercontinental-chongqing.html</a></p>
         <iframe id="hotel_map1" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
         <br>
-        <p>Another hotel is InterContinental Chongqing Hotel(<a href="https://www.booking.com/hotel/cn/intercontinental-chongqing.html">https://www.booking.com/hotel/cn/intercontinental-chongqing.html</a>), which is in the downtown of Chongqing city, you can get enjoy the feelings of this city around the Jiefangbei.</p>
+        <p><stong>Hostel: no recommended hostels near this place</stong></p>
+      </div>
+      <h3><strong>Located in downtown(Jiefangbei)</strong></h3>
+      <div>
+        <p>Hotel: 重庆洲际酒店/InterContinental Chongqing Hotel</p>
+        <p>Price: Average 700RMB (US$ 110)/night</p>
+        <p>Rating 8.4 on Booking.com</p>
+        <p>Link:<a href="https://www.booking.com/hotel/cn/intercontinental-chongqing.html">https://www.booking.com/hotel/cn/intercontinental-chongqing.html</a></p>
         <iframe id="hotel_map2" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
         <br>
+        <p>Hostel: 重庆瓦舍国际青年旅社（解放碑店）/Chongqing Travelling With Hostel (Jiefangbei）</p>
+        <p>Price: Average 50-200RMB(US$ 8 –30)/night</p>
+        <p>Rating 8.6 on Booking.com</p>
+        <p>Link:<a href="https://www.booking.com/hotel/cn/greenforest-chongqing.html">https://www.booking.com/hotel/cn/greenforest-chongqing.html</a></p>
+        <iframe id="hotel_map3" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <h3><strong>Venue</strong></h3>
       <div>
-        <p>Floor 3, Main building, Campus A, Chongqing University</p>
+        <p>地址：重庆市沙坪坝区重庆大学A区主教三楼大报告厅</p>
+        <p>Address：Floor 3, Main building, Campus A, Chongqing University</p>
         <iframe id="cqu_map" class="map" width="600px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
 	</div>
@@ -230,17 +250,20 @@ var onSuccess = function(location){
             $("#cqu_map").attr("src","https://m.amap.com/search/mapview/poiid=B0017822WN");
             $("#hotel_map1").attr("src","https://m.amap.com/search/mapview/poiid=B001702171");
             $("#hotel_map2").attr("src","https://m.amap.com/search/mapview/poiid=B0017091J1");
+            $("#hotel_map3").attr("src","https://m.amap.com/search/mapview/poiid=B001792JN6");
             
         }else{
     		$("#cqu_map").attr("src","https://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
     		$("#hotel_map1").attr("src","https://gaode.com/search?id=B001702171&city=500106&geoobj=106.577472%7C29.556369%7C106.579741%7C29.557361&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E4%B8%BD%E8%8B%91%E5%A4%A7%E9%85%92%E5%BA%97&zoom=18");
             $("#hotel_map2").attr("src","https://gaode.com/search?query=%E9%87%8D%E5%BA%86%E6%B4%B2%E9%99%85%E9%85%92%E5%BA%97&city=500000&geoobj=106.576219%7C29.555884%7C106.580758%7C29.557868&zoom=18");
+            $("#hotel_map3").attr("src","https://gaode.com/search?query=%E7%93%A6%E8%88%8D%E5%9B%BD%E9%99%85%E9%9D%92%E5%B9%B4%E6%97%85%E8%88%8D(%E9%87%8D%E5%BA%86%E8%A7%A3%E6%94%BE%E7%A2%91%E8%BE%83%E5%9C%BA%E5%8F%A3%E5%9C%B0%E9%93%81%E7%AB%99%E5%BA%97)&city=500000&geoobj=106.570113%7C29.55144%7C106.57478%7C29.5536&zoom=18");
         }
 	}else{
 		$("#cqu_map").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.3039808355506!2d106.46834476561997!3d29.565757482059023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccb918cb5ebb3%3A0xc40727c92a4f9472!2sChongqing+University+Main+Teaching+Building%2C+ChongQing+DaXue%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China!5e0!3m2!1sen!2sus!4v1504677062104?hl=en-US");
 
     	$("#hotel_map1").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
         $("#hotel_map2").attr("src","https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3470.529113069521!2d106.5768113!3d29.5592046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x369334809109b311%3A0xb04f8d40d2b799f8!2z6YeN5bqG5rSy6ZmF6YWS5bqX!5e0!3m2!1szh-CN!2sjp!4v1504791707271?hl=en-US");
+        $("#hotel_map3").attr("src","https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13882.611269388815!2d106.56919!3d29.5556034!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x186322d2b151b20a!2z55Om6IiN5peF6KGM6YWS5bqX!5e0!3m2!1szh-CN!2sus!4v1504873170231?hl=en-US");
 	}
 };
 var onError = function(location){
@@ -248,6 +271,7 @@ var onError = function(location){
 
 	$("#hotel_map1").attr("src","https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.6418812085385!2d106.45802580071295!3d29.55592178197458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36eccbc1c76cef69%3A0x8d09ea6e3520caa7!2sLiyuan+Hotel%2C+SanXia+GuangChang+BuXingJie%2C+Shapingba+Qu%2C+Chongqing+Shi%2C+China%2C+400030!5e0!3m2!1sen!2sus!4v1504675804814?hl=en-US");
     $("#hotel_map2").attr("src","https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3470.529113069521!2d106.5768113!3d29.5592046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x369334809109b311%3A0xb04f8d40d2b799f8!2z6YeN5bqG5rSy6ZmF6YWS5bqX!5e0!3m2!1szh-CN!2sjp!4v1504791707271?hl=en-US");
+    $("#hotel_map3").attr("src","https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13882.611269388815!2d106.56919!3d29.5556034!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x186322d2b151b20a!2z55Om6IiN5peF6KGM6YWS5bqX!5e0!3m2!1szh-CN!2sus!4v1504873170231?hl=en-US");
 }
 geoip2.country(onSuccess, onError);
 
