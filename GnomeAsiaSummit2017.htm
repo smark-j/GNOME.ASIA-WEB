@@ -57,6 +57,11 @@
     margin-top: 20px;
     display: inline-flex;
 }
+#div_sponsors a{
+    padding: 0 20px;
+    margin-top: 20px;
+    display: inline-flex;
+}
 #div_communities .container.text-center{
     /*display:inline;*/
 }
@@ -100,6 +105,17 @@
     align-items: center;
 }
 
+#btn_Ticket{
+    position: absolute;
+    right: 20%;
+    padding: 8px 20px;
+    font-size: 24px;
+    margin-top: 20px
+}
+#btn_Ticket a:focus, a:hover {
+    color: #fff;
+    text-decoration: none
+}
 </style>
 
 </head>
@@ -176,6 +192,7 @@
             <hr>
             <h2>T H E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S O U R C E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A W A K E N S</h2>
         </div>
+        <button id="btn_Ticket" class="btn btn-danger btn-sm"><a href="https://wx.duohui.co/event/1390" target="_blank">Ticket</a></button>
     </div>
 
     <!--content-->
@@ -317,6 +334,35 @@
          </div>
         </div>
     </div>
+
+    <!--sponsors-->
+    <div id="div_sponsors" class="container-xl">
+        <div class="row">
+            <div class="container">
+                <h1 id="h1_sponsor" class="text-center">SPONSORS</h1>
+                <hr>
+                <div class="container text-center"> 
+                    <h2 class="text-left">DIAMOND</h2>        
+                    <a href="https://neo.org/"><img height="60px" src="./GnomeAsiaSummit2017_files/neo_logo.svg" title="NEO"></a>
+                </div>
+                <div class="container text-center">
+                    <h2 class="text-left">PLATINUM</h2> 
+                    <a href="http://www.lzlj.com"><img height="60px" src="./GnomeAsiaSummit2017_files/lzlj-logo.png" title="泸州老窖"></a>
+                </div>
+                <div class="container text-center"> 
+                    <h2 class="text-left">GOLD</h2>   
+                    <a href="http://www.huawei.com"><img height="60px" src="./GnomeAsiaSummit2017_files/huawei-logo.png" title="华为"></a>
+                </div>
+                <div class="container text-center">
+                    <h2 class="text-left">SILVER</h2>     
+                    <a href="http://www.microsoft.com"><img height="54px" src="./GnomeAsiaSummit2017_files/microsoft-gray.png" title="微软"></a>
+                    <a href="http://www.seafile.com"><img height="54px" src="./GnomeAsiaSummit2017_files/seafile-logo.png" title="Seafile"></a>
+                    <a href="http://www.cs2c.com.cn"><img height="40px" src="./GnomeAsiaSummit2017_files/cs2c-logo.jpg" title="中标软件"></a>
+                </div>
+         </div>
+        </div>
+    </div>
+
     <!--media-->
     <div id="div_media" class="container-xl">
         <div class="row">

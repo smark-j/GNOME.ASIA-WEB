@@ -24,4 +24,6 @@ $(function () {
         location.href = "#";
         $("#nav_btn_contact").click();
     });
+
+    $("#div_top").css("height",$(window).height()+"px");
 });
