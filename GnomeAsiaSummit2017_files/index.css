@@ -710,6 +710,7 @@ height:120px;
 }
 .slide-sponsor .content .logo-box img{
   width: 60%;
+/*height: 65px;*/
   padding: 10px;
 /*  border:1px solid #999; */
 }
