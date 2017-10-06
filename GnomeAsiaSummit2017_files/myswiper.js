@@ -59,16 +59,22 @@ var mainSwiper = new Swiper('#main', {
     roundLengths : true,
     keyboardControl: true,
     onKeyPress: function(swiper, event){
-    //alert('你按了键盘'+event);
+      //console.log('press keyboard key'+event);
+      if(event==33){
+        mainSwiper.slidePrev();
+      }
+      if(event==34){
+        mainSwiper.slideNext();
+      }
     },
     onInit: function(swiper){
       swiperAnimateCache(swiper);  
       swiperAnimate(swiper);
       $("#navScroll li").each(function(index,ele){
           $(this).click(function(){
-          	swiper.slideTo($(this).data("link"));
-       		$("#navScroll li").removeClass("active");
-          	$(this).addClass("active");
+            swiper.slideTo($(this).data("link"));
+          $("#navScroll li").removeClass("active");
+            $(this).addClass("active");
           });
       });
     }, 
@@ -80,9 +86,69 @@ var mainSwiper = new Swiper('#main', {
       if(swiper.activeIndex==2){
         swiper.params.onlyExternal=true;
         swiper.disableMousewheelControl();
+        swiper.disableKeyboardControl();
+        document.onkeydown=function(event){
+          var e = event || window.event || arguments.callee.caller.arguments[0];
+          if(scheduleSwiper.activeIndex==0){
+            if(e && (e.keyCode==38 || e.keyCode==33)){ // press top or pageUp
+              if(schedule01Swiper.translate>-2){
+                mainSwiper.slideTo(1);
+              }else{
+                schedule01Swiper.setWrapperTranslate(schedule01Swiper.getWrapperTranslate()+50);
+              }
+            }
+            if(e && (e.keyCode==40 || e.keyCode==34)){ // 按下
+              slideHeight=schedule01Swiper.slides[0].scrollHeight;
+              swiperHeight=schedule01Swiper.height;
+              if(slideHeight-swiperHeight+schedule01Swiper.translate<2){
+                scheduleSwiper.slideTo(1);
+              }else{ 
+                schedule01Swiper.setWrapperTranslate(schedule01Swiper.getWrapperTranslate()-50);
+              }
+            }  
+          }
+          if(scheduleSwiper.activeIndex==1){
+            if(e && (e.keyCode==38 || e.keyCode==33)){ // 按上 
+              if(schedule02Swiper.translate>-2){
+                scheduleSwiper.slideTo(0);
+              }else{
+                schedule02Swiper.setWrapperTranslate(schedule02Swiper.getWrapperTranslate()+50);
+              }
+            }
+            if(e && (e.keyCode==40 || e.keyCode==34)){ // 按下
+              slideHeight=schedule02Swiper.slides[0].scrollHeight;
+              swiperHeight=schedule02Swiper.height;
+              if(slideHeight-swiperHeight+schedule02Swiper.translate<2){
+                scheduleSwiper.slideTo(2);
+              }else{ 
+                schedule02Swiper.setWrapperTranslate(schedule02Swiper.getWrapperTranslate()-50);
+              }
+            }  
+          }
+          if(scheduleSwiper.activeIndex==2 && mainSwiper.activeIndex!=3){
+            if(e && (e.keyCode==38 || e.keyCode==33)){ // 按上 
+              if(schedule03Swiper.translate>-2){
+                scheduleSwiper.slideTo(1);
+              }else{
+                schedule03Swiper.setWrapperTranslate(schedule03Swiper.getWrapperTranslate()+10);
+              }
+            }
+            if(e && (e.keyCode==40 || e.keyCode==34)){ // 按下
+              slideHeight=schedule03Swiper.slides[0].scrollHeight;
+              swiperHeight=schedule03Swiper.height;
+              if(slideHeight-swiperHeight+schedule03Swiper.translate<2){
+                mainSwiper.slideTo(3);
+              }else{ 
+                schedule03Swiper.setWrapperTranslate(schedule03Swiper.getWrapperTranslate()-10);
+              }
+            }  
+          }
+
+        };
       }else{
         swiper.params.onlyExternal=false;
         swiper.enableMousewheelControl();
+        swiper.enableKeyboardControl();
       }
       if(swiper.activeIndex==3 && $("#cqu_map").html()==""){
       //if(swiper.activeIndex==3 && $("#cqu_map").attr("src")==""){
@@ -90,87 +156,12 @@ var mainSwiper = new Swiper('#main', {
         //$("#cqu_map").attr("src","https://gaode.com/search?id=B0017822WN&city=500106&geoobj=106.45715%7C29.554432%7C106.462917%7C29.557242&query_type=IDQ&query=%E9%87%8D%E5%BA%86%E5%A4%A7%E5%AD%A6%E4%B8%BB%E6%95%99%E5%AD%A6%E6%A5%BC&zoom=18");
         creatMap1();
       }
-//    setTimeout('timeline01Swiper.setWrapperTranslate(-40)',1500);
       schedule01Swiper.setWrapperTranslate(-40);
       schedule02Swiper.setWrapperTranslate(-40);
       schedule03Swiper.setWrapperTranslate(-40);
     }
 });
 
-// var timelineSwiper = new Swiper('#timeline', {
-//     direction: "vertical",
-//     speed:transitionSpeed,
-//     autoHeight: true,
-//     slidesPerView: 1,
-//     mousewheelControl: true,
-//     roundLengths : true,
-//     onSetTransition: function(swiper,translate){
-//       //父级锁定&解锁
-//       if(mainSwiper.activeIndex==2){
-//         mainSwiper.params.onlyExternal=true;
-//         mainSwiper.disableMousewheelControl();
-//       }else{
-//         mainSwiper.params.onlyExternal=false;
-//         mainSwiper.enableMousewheelControl();
-//       }
-//       //timelineSwiper.setWrapperTranslate(-40);
-//       schedule01Swiper.setWrapperTranslate(-40);
-//       schedule02Swiper.setWrapperTranslate(-40);
-//       //schedule03Swiper.setWrapperTranslate(-40);
-
-//     }
-// });
-
-// var timeline01Swiper = new Swiper('#timeline01',{
-//     scrollbar: '.swiper-scrollbar',
-//     direction: 'vertical',
-//     speed:transitionSpeed,
-//     slidesPerView: 'auto',
-//     freeMode: true,
-//     freeModeMomentum : false,
-//     mousewheelControl: true,
-//     mousewheelSensitivity : 0.775,
-//     roundLengths : true,
-//     onSetTransition: function(swiper,translate){
-//       //父级锁定&解锁
-//       if(timelineSwiper.activeIndex==0){
-//         timelineSwiper.params.onlyExternal=true;
-//         timelineSwiper.disableMousewheelControl();
-//       }else{
-//         timelineSwiper.params.onlyExternal=false;
-//         timelineSwiper.enableMousewheelControl();
-//       }
-
-//       //translate 一直为0，不可直接用
-//       nowTranslate=swiper.translate;
-//       if(typeof(beforeTranslate)=="undefined"){
-//         beforeTranslate=0;
-//       };
-//       slideHeight=swiper.slides[0].scrollHeight;
-//       swiperHeight=swiper.height;
-//       if(nowTranslate>-2 && nowTranslate > beforeTranslate){//当前到顶
-//         mainSwiper.slideTo(1);
-//         mainSwiper.params.onlyExternal=false;
-//         mainSwiper.enableMousewheelControl();
-//         beforeTranslate = -1;
-//       }
-//       if(slideHeight-swiperHeight+nowTranslate<182 && nowTranslate < beforeTranslate){//当前到底
-//         mainSwiper.slideTo(3);
-//         $("#timeline01 .swiper-wrapper").css("transform","matrix(1, 0, 0, 1, 0, 0)");
-//         beforeTranslate = 1;
-//       }else{
-//         beforeTranslate=nowTranslate;
-//       }
-//     },
-//      onReachBeginning:function(swiper){
-//       if(swiper.translate>0){
-//         timelineSwiper.slideTo(0);
-//       }
-//        if(swiper.translate<(swiper.height-swiper.slides[0].scrollHeight)){
-//         timelineSwiper.slideTo(1);
-//       }
-//      }
-//     });
 function setEventContentHeight(){
   $(".slide-schedule .times").each(function(index,ele){
     var maxEventBoxHeight=0;
@@ -193,6 +184,8 @@ var scheduleSwiper = new Swiper('#schedule', {
     autoHeight: true,
     slidesPerView: 1,
     mousewheelControl: true,
+    keyboardControl:false,
+    noSwiping : true,
     roundLengths : true,
     onInit: function(swiper){
       var spanText = ["DAY 1","DAY 2","社区专场"];
@@ -207,9 +200,11 @@ var scheduleSwiper = new Swiper('#schedule', {
       if(mainSwiper.activeIndex==2){
         mainSwiper.params.onlyExternal=true;
         mainSwiper.disableMousewheelControl();
+        mainSwiper.disableKeyboardControl();
       }else{
         mainSwiper.params.onlyExternal=false;
         mainSwiper.enableMousewheelControl();
+        mainSwiper.enableKeyboardControl();
       }
 //    timelineSwiper.setWrapperTranslate(-40);
       schedule01Swiper.setWrapperTranslate(-40);
@@ -224,6 +219,7 @@ var scheduleSwiper = new Swiper('#schedule', {
       speed:transitionSpeed,
       slidesPerView: 'auto',
       freeMode: true,
+      freeModeSticky : false,
       freeModeMomentum : false,
       mousewheelControl: true,
       mousewheelSensitivity : 0.775,
@@ -249,6 +245,7 @@ var scheduleSwiper = new Swiper('#schedule', {
           mainSwiper.slideTo(1);
           mainSwiper.params.onlyExternal=false;
           mainSwiper.enableMousewheelControl();
+          mainSwiper.enableKeyboardControl();
           beforeTranslate = -1;
         }
         if(slideHeight-swiperHeight+nowTranslate<2 && nowTranslate < beforeTranslate){//当前到底
@@ -355,6 +352,7 @@ var scheduleSwiper = new Swiper('#schedule', {
           mainSwiper.slideTo(3);
           mainSwiper.params.onlyExternal=false;
           mainSwiper.enableMousewheelControl();
+          mainSwiper.enableKeyboardControl();
           $("#schedule03 .swiper-wrapper").css("transform","matrix(1, 0, 0, 1, 0, 0)")
           beforeTranslate = 1;
         }else{
@@ -377,6 +375,7 @@ var transportSwiper = new Swiper('#transport', {
     speed:transitionSpeed,
     slidesPerView: 1,
     mousewheelControl: false,
+    keyboardControl:true,
     roundLengths : true,
     prevButton:'.swiper-button-prev',
     nextButton:'.swiper-button-next',
