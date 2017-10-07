@@ -64,9 +64,9 @@
 .slide-timeline .content{
 	font-family:'SiYuan-ExtraLigcf7e4327026bb';
 }
-.slide-schedule .rooms{
+/*.slide-schedule .rooms{
 	font-family:'SiYuanBoldcf7dd67ab26bb';
-}
+}*/
 /* .slide-schedule .timeline{
 	font-family:'SiYuan-ExtraLigcf7e4327026bb';
 } */
@@ -86,7 +86,7 @@
 	font-family:'SiYuanBoldcf7dd67ab26bb';
 }
 .slide-staff .staff-box p{
-	font-family:'SiYuanBoldcf7dd67ab26bb';
+	font-family:'SiYuan-ExtraLigcf7e4327026bb';
 }
 .slide-footer p{
 	font-family:'SiYuanBoldcf7dd67ab26bb';

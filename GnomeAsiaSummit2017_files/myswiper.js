@@ -23,7 +23,7 @@ $(".logo-window").click(function(){
   $(this).hide();
 });
 $("a").each(function(index,ele){
-    if($(this).attr("href")==""){
+    if($(this).attr("href")!=""){
       $(this).attr("target","_blank");
     }
 });
@@ -42,11 +42,11 @@ $(".ani").each(function(index,ele){
 if(browser.versions.mobile){
   scheduleSwiperDirection="horizontal";
   transitionSpeed=500;
-  $(".margin").css("height",$(window).height()-214);
+  $(".margin").css("height",$(window).height()-100);
 }else{
   scheduleSwiperDirection="vertical";
   transitionSpeed=1000;
-  $(".margin").css("height",$(window).height()-414);
+  $(".margin").css("height",$(window).height()-400);
 }
 
 
@@ -56,15 +56,22 @@ var mainSwiper = new Swiper('#main', {
     slidesPerView: 'auto',
     parallax: true,
     mousewheelControl: true,
+    noSwiping : true,
     roundLengths : true,
     keyboardControl: true,
     onKeyPress: function(swiper, event){
-      //console.log('press keyboard key'+event);
-      if(event==33){
+      console.log('press keyboard key'+event);
+      if(event==33){//pageup
         mainSwiper.slidePrev();
       }
-      if(event==34){
+      if(event==34){//pagedown
         mainSwiper.slideNext();
+      }
+      if(event==35){//end
+        mainSwiper.slideTo(8, 2000, false);
+      }
+      if(event==36){//home
+        mainSwiper.slideTo(0, 2000, false);
       }
     },
     onInit: function(swiper){
@@ -82,6 +89,10 @@ var mainSwiper = new Swiper('#main', {
       swiperAnimate(swiper);
     },
     onSetTransition: function(swiper){
+      var spanText = ["DAY 1","DAY 2","社区专场"];
+      $(".swiper-pagination-bullet").each(function(index,ele){
+        $(this).html(spanText[index]);
+      });
       //if(swiper.activeIndex==2 || swiper.activeIndex==3){
       if(swiper.activeIndex==2){
         swiper.params.onlyExternal=true;
@@ -94,7 +105,7 @@ var mainSwiper = new Swiper('#main', {
               if(schedule01Swiper.translate>-2){
                 mainSwiper.slideTo(1);
               }else{
-                schedule01Swiper.setWrapperTranslate(schedule01Swiper.getWrapperTranslate()+50);
+                schedule01Swiper.setWrapperTranslate(schedule01Swiper.getWrapperTranslate()+40);
               }
             }
             if(e && (e.keyCode==40 || e.keyCode==34)){ // 按下
@@ -103,7 +114,7 @@ var mainSwiper = new Swiper('#main', {
               if(slideHeight-swiperHeight+schedule01Swiper.translate<2){
                 scheduleSwiper.slideTo(1);
               }else{ 
-                schedule01Swiper.setWrapperTranslate(schedule01Swiper.getWrapperTranslate()-50);
+                schedule01Swiper.setWrapperTranslate(schedule01Swiper.getWrapperTranslate()-40);
               }
             }  
           }
@@ -112,7 +123,7 @@ var mainSwiper = new Swiper('#main', {
               if(schedule02Swiper.translate>-2){
                 scheduleSwiper.slideTo(0);
               }else{
-                schedule02Swiper.setWrapperTranslate(schedule02Swiper.getWrapperTranslate()+50);
+                schedule02Swiper.setWrapperTranslate(schedule02Swiper.getWrapperTranslate()+45);
               }
             }
             if(e && (e.keyCode==40 || e.keyCode==34)){ // 按下
@@ -121,7 +132,7 @@ var mainSwiper = new Swiper('#main', {
               if(slideHeight-swiperHeight+schedule02Swiper.translate<2){
                 scheduleSwiper.slideTo(2);
               }else{ 
-                schedule02Swiper.setWrapperTranslate(schedule02Swiper.getWrapperTranslate()-50);
+                schedule02Swiper.setWrapperTranslate(schedule02Swiper.getWrapperTranslate()-45);
               }
             }  
           }
@@ -222,8 +233,24 @@ var scheduleSwiper = new Swiper('#schedule', {
       freeModeSticky : false,
       freeModeMomentum : false,
       mousewheelControl: true,
-      mousewheelSensitivity : 0.775,
+      mousewheelSensitivity : 0.77,
       roundLengths : true,
+      onSetTranslate: function(swiper,translate){
+         if(swiper.getWrapperTranslate()<-190 && scheduleSwiper.activeIndex==0){
+          $(".rooms").fadeIn();
+          $(".room1").fadeIn();
+         }else{
+          $(".rooms").hide();
+          $(".room1").hide();
+         }
+         if(swiper.getWrapperTranslate()<-656 && scheduleSwiper.activeIndex==0){
+          $(".room2").fadeIn();
+          $(".room3").fadeIn();
+         }else{
+          $(".room2").hide();
+          $(".room3").hide();
+         }
+      },
       onSetTransition: function(swiper,translate){
         //父级锁定&解锁
         if(scheduleSwiper.activeIndex==0){
@@ -243,6 +270,10 @@ var scheduleSwiper = new Swiper('#schedule', {
         swiperHeight=swiper.height;
         if(nowTranslate>-2 && nowTranslate > beforeTranslate){//当前到顶
           mainSwiper.slideTo(1);
+          $(".rooms").hide();
+          $(".room1").hide();
+          $(".room2").hide();
+          $(".room3").hide();
           mainSwiper.params.onlyExternal=false;
           mainSwiper.enableMousewheelControl();
           mainSwiper.enableKeyboardControl();
@@ -250,6 +281,10 @@ var scheduleSwiper = new Swiper('#schedule', {
         }
         if(slideHeight-swiperHeight+nowTranslate<2 && nowTranslate < beforeTranslate){//当前到底
           scheduleSwiper.slideTo(1);
+          $(".rooms").hide();
+          $(".room1").hide();
+          $(".room2").hide();
+          $(".room3").hide();
           $("#schedule01 .swiper-wrapper").css("transform","matrix(1, 0, 0, 1, 0, 0)");
           beforeTranslate = 1;
         }else{
@@ -274,8 +309,21 @@ var scheduleSwiper = new Swiper('#schedule', {
       freeMode: true,
       freeModeMomentum : false,
       mousewheelControl: true,
-      mousewheelSensitivity : 0.775,
+      mousewheelSensitivity : 0.77,
       roundLengths : true,
+      onSetTranslate: function(swiper,translate){
+         if(swiper.getWrapperTranslate()<-260 && scheduleSwiper.activeIndex==1){
+          $(".rooms").fadeIn();
+          $(".room1").fadeIn();
+          $(".room2").fadeIn();
+          $(".room3").fadeIn();
+         }else{
+          $(".rooms").hide();
+          $(".room1").hide();
+          $(".room2").hide();
+          $(".room3").hide();
+         }
+      },
       onSetTransition: function(swiper,translate){
         //父级    
         if(scheduleSwiper.activeIndex==1){
@@ -296,9 +344,17 @@ var scheduleSwiper = new Swiper('#schedule', {
         if(nowTranslate>-2 && nowTranslate > beforeTranslate){
           scheduleSwiper.slideTo(0);
           beforeTranslate = -1;
+          $(".rooms").hide();
+          $(".room1").hide();
+          $(".room2").hide();
+          $(".room3").hide();
         }
         if(slideHeight-swiperHeight+nowTranslate<2 && nowTranslate < beforeTranslate){
           scheduleSwiper.slideTo(2);
+          $(".rooms").hide();
+          $(".room1").hide();
+          $(".room2").hide();
+          $(".room3").hide();
           //mainSwiper.slideTo(3);
           $("#schedule02 .swiper-wrapper").css("transform","matrix(1, 0, 0, 1, 0, 0)")
           beforeTranslate=1;
@@ -325,7 +381,7 @@ var scheduleSwiper = new Swiper('#schedule', {
       freeMode: true,
       freeModeMomentum : false,
       mousewheelControl: true,
-      mousewheelSensitivity : 0.775,
+      mousewheelSensitivity : 0.77,
       roundLengths : true,
       onSetTransition: function(swiper,translate){
         //父级    
@@ -377,6 +433,7 @@ var transportSwiper = new Swiper('#transport', {
     mousewheelControl: false,
     keyboardControl:true,
     roundLengths : true,
+    autoplay:5000,
     prevButton:'.swiper-button-prev',
     nextButton:'.swiper-button-next',
     onSetTransition: function(swiper,translate){
