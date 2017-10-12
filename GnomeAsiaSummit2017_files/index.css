@@ -1083,7 +1083,7 @@ background-color: rgba(0,0,0,.5);
   margin-left: 0;
 }
 .slide-schedule .mobile-room{
-  display: none;
+/*  display: none;*/
 }
 .slide-schedule .calendar{
     display: inline-block;
@@ -1098,15 +1098,18 @@ background-color: rgba(0,0,0,.5);
 }
 [class*='grid-']{padding:5px;}
 .slide-schedule .rooms{
-    width: 87%;
+    width: 90%;
     height: 40px;
-    margin: 5px 0 0 10%;
-    top: 180px;
+    margin: 5px 0 0 0%;
+    top: 90px;
     position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-size: 15px;
+    left: 47px;
+    background: #fff;
 }
 .slide-schedule .timeline .address3 {
     text-align: left;
@@ -1119,7 +1122,7 @@ background-color: rgba(0,0,0,.5);
 }
 .slide-schedule .container{width:100%;}
 .slide-schedule .content{width:100%;}
-.slide-schedule .timeline{width:100%;top:180px;}
+.slide-schedule .timeline{width:100%;top:150px;}
 .slide-schedule .timeline .address{
     text-align: left;
     margin-left: 20px;
@@ -1172,8 +1175,8 @@ background-color: rgba(0,0,0,.5);
     text-indent: 30px;
     margin-right: 70px !important;
 }
-.slide-schedule .swiper-container-vertical>.swiper-pagination-bullets{left: 0;top: 18%;width: 100%;}
-.slide-schedule .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{display: inline-block;margin:20px;}
+.slide-schedule .swiper-container-vertical>.swiper-pagination-bullets{left: 0;top: 13%;width: 100%;background: #fff;}
+.slide-schedule .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{display: inline-block;margin:10px;}
 
 .slide-transport .wp{width: 90%;}
 .slide-transport .wp .content{width: 100%;}
@@ -1188,8 +1191,9 @@ background-color: rgba(0,0,0,.5);
 .slide-sponsor .title img{width:100%;}
 .slide-sponsor .content{width: 100%;padding: 10% 5% 0 5%;}
 .slide-sponsor .content .diamond,.platinum,.gold,.sliver{margin-top:5px;margin-right: 0%;}
-.slide-sponsor .content .grade{font-size: 18px;width: 60%;margin: -20px 0 0 -10px;}
-.slide-sponsor .content .logo-box{width: 25%;margin-top: 30px;}
+.slide-sponsor .content .mobile-sliver-margin{margin-top:40px;}
+.slide-sponsor .content .grade{font-size: 18px;width: 100%;margin: -20px 0 0 -10px;}
+.slide-sponsor .content .logo-box{width: 33%;margin-top: -25px;}
 .slide-sponsor .content .logo-box img{width: 100%;padding: 5px;/*border:1px solid #999;*/}
 
 .slide-contributors .title{width: 45%;left: 27.5%;top: 20px;position: relative;}

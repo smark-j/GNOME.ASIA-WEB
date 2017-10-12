@@ -43,6 +43,7 @@ if(browser.versions.mobile){
   scheduleSwiperDirection="horizontal";
   transitionSpeed=500;
   $(".margin").css("height",$(window).height()-100);
+  $(".swiper-no-swiping").removeClass("swiper-no-swiping");
 }else{
   scheduleSwiperDirection="vertical";
   transitionSpeed=1000;
@@ -236,14 +237,21 @@ var scheduleSwiper = new Swiper('#schedule', {
       mousewheelSensitivity : 0.77,
       roundLengths : true,
       onSetTranslate: function(swiper,translate){
-         if(swiper.getWrapperTranslate()<-190 && scheduleSwiper.activeIndex==0){
+        if(browser.versions.mobile){
+          var translateValue1=-190;
+          var translateValue2=-563;
+        }else{
+          var translateValue1=-190;
+          var translateValue2=-656;
+        }
+         if(swiper.getWrapperTranslate()<translateValue1 && scheduleSwiper.activeIndex==0){
           $(".rooms").fadeIn();
           $(".room1").fadeIn();
          }else{
           $(".rooms").hide();
           $(".room1").hide();
          }
-         if(swiper.getWrapperTranslate()<-656 && scheduleSwiper.activeIndex==0){
+         if(swiper.getWrapperTranslate()<translateValue2 && scheduleSwiper.activeIndex==0){
           $(".room2").fadeIn();
           $(".room3").fadeIn();
          }else{
@@ -312,7 +320,12 @@ var scheduleSwiper = new Swiper('#schedule', {
       mousewheelSensitivity : 0.77,
       roundLengths : true,
       onSetTranslate: function(swiper,translate){
-         if(swiper.getWrapperTranslate()<-260 && scheduleSwiper.activeIndex==1){
+        if(browser.versions.mobile){
+          var translateValue1=-230;
+        }else{
+          var translateValue1=-260;
+        }
+         if(swiper.getWrapperTranslate()<translateValue1 && scheduleSwiper.activeIndex==1){
           $(".rooms").fadeIn();
           $(".room1").fadeIn();
           $(".room2").fadeIn();
@@ -349,7 +362,8 @@ var scheduleSwiper = new Swiper('#schedule', {
           $(".room2").hide();
           $(".room3").hide();
         }
-        if(slideHeight-swiperHeight+nowTranslate<2 && nowTranslate < beforeTranslate){
+        if(browser.versions.mobile){var fixMargin=90;}else{var fixMargin=2;}
+        if(slideHeight-swiperHeight+nowTranslate<fixMargin && nowTranslate < beforeTranslate){
           scheduleSwiper.slideTo(2);
           $(".rooms").hide();
           $(".room1").hide();
