@@ -321,7 +321,7 @@ var scheduleSwiper = new Swiper('#schedule', {
       roundLengths : true,
       onSetTranslate: function(swiper,translate){
         if(browser.versions.mobile){
-          var translateValue1=-230;
+          var translateValue1=-200;
         }else{
           var translateValue1=-260;
         }

@@ -1101,7 +1101,7 @@ background-color: rgba(0,0,0,.5);
     width: 90%;
     height: 40px;
     margin: 5px 0 0 0%;
-    top: 90px;
+    top: 100px;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -1175,7 +1175,7 @@ background-color: rgba(0,0,0,.5);
     text-indent: 30px;
     margin-right: 70px !important;
 }
-.slide-schedule .swiper-container-vertical>.swiper-pagination-bullets{left: 0;top: 13%;width: 100%;background: #fff;}
+.slide-schedule .swiper-container-vertical>.swiper-pagination-bullets{left: 0;top: 90px;width: 100%;background: #fff;}
 .slide-schedule .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{display: inline-block;margin:10px;}
 
 .slide-transport .wp{width: 90%;}
